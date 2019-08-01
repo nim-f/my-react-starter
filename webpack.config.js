@@ -2,26 +2,34 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+//const { BabelMultiTargetPlugin } = require('webpack-babel-multi-target-plugin')
 
 module.exports = env => {
   const isProduction = env === 'production'
   return {
-    // Add different entrypoints
-    // entry: {
-    //   home: './src/index.js',
-    // },
+    resolve: {
+      mainFields: [
+        'es2015',
+        'module',
+        'main',
+      ],
+    },
     output: {
       path: path.resolve(__dirname, "build"),
-      filename: () => isProduction ? 'static/js/[name].[chunkhash:8].js' : 'static/js/bundle.js'
+      filename: () => isProduction ? 'static/js/[name].[chunkhash:8].js' : 'static/js/bundle.js',
+      publicPath: '/',
+    },
+    devServer: {
+      historyApiFallback: true,
     },
     module: {
       rules: [
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: {
-            loader: "babel-loader"
-          }
+          use: [
+            { loader: 'babel-loader' }
+          ]
         },
         {
           test: /\.(png|jpe?g|gif|svg)$/,

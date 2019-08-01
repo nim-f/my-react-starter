@@ -8,8 +8,11 @@
     "start": "webpack-dev-server --open --mode development --env=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "Anna Shakhbazian",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -30,6 +33,7 @@
     "postcss-preset-env": "^6.7.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.36.1",
+    "webpack-babel-multi-target-plugin": "^2.3.0-alpha.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
   },
