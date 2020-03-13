@@ -3,6 +3,6 @@ import Logo from './images/logo.png'
 
 export default function App() {
   return (
-    <div>123<img src={Logo} alt="logo" /></div>
+    <div><img src={Logo} alt="logo" /></div>
   );
 }
