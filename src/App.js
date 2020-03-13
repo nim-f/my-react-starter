@@ -10,7 +10,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <div>123<img src={Logo} alt="logo" /></div>
+        <div><img src={Logo} alt="logo" /></div>
       </ConnectedRouter>
     </Provider>
   );
